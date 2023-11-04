@@ -2,14 +2,13 @@
 
 import { SingleGameCardSkeleton } from "@/components/contents/GameCard";
 import mainLayout from "@/components/layouts/mainLayout";
-import { axiosHander } from "@/lib/handlers";
+import { axiosHander, fetchSingleGame } from "@/lib/handlers";
 import { raffle } from "@/lib/network";
 import { Raffle } from "@/lib/types";
 import { ChevronRight } from "lucide-react";
 import { NextPage } from "next";
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchSingleGame } from "../../page";
 import { SingleRaffleCard } from "@/components/contents/RafflePriceCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Tickets from "./Tickets";

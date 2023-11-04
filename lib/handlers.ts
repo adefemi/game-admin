@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Game } from "./types";
+import { game } from "./network";
 
 export function axiosHander<T>(
   url: string,
@@ -20,4 +22,10 @@ export function axiosHander<T>(
     data: data,
     ...config,
   });
+}
+
+export async function fetchSingleGame(id: string) {
+  const res = await axiosHander<Game>(game.detail + id, "GET", null, true);
+
+  return res.data;
 }

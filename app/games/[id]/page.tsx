@@ -6,7 +6,7 @@ import {
 } from "@/components/contents/GameCard";
 import mainLayout from "@/components/layouts/mainLayout";
 import CreateRaffleTickets from "@/components/process/CreatePrice";
-import { axiosHander } from "@/lib/handlers";
+import { axiosHander, fetchSingleGame } from "@/lib/handlers";
 import { game } from "@/lib/network";
 import { Game } from "@/lib/types";
 import { ChevronRight } from "lucide-react";
@@ -14,12 +14,6 @@ import { NextPage } from "next";
 import React from "react";
 import { useQuery } from "react-query";
 import RafflePrices from "@/app/games/[id]/RafflePrices";
-
-export async function fetchSingleGame(id: string) {
-  const res = await axiosHander<Game>(game.detail + id, "GET", null, true);
-
-  return res.data;
-}
 
 const gameHeadings: { [key: string]: string } = {
   raffle: "Prizes",
