@@ -16,7 +16,7 @@ async function fetchGames() {
   return res.data;
 }
 
-function Home() {
+const Home = () => {
   const { data, isLoading } = useQuery(
     reactQueryCacheControllers.game,
     fetchGames
@@ -46,4 +46,6 @@ function Home() {
   );
 }
 
-export default mainLayout(Home);
+const MainHome = () => mainLayout(Home);
+
+export default MainHome;
