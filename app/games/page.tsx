@@ -46,6 +46,10 @@ const Home = () => {
   );
 }
 
-const MainHome = () => mainLayout(Home);
+const MainSection = mainLayout(Home);
+
+const MainHome = () => {
+  return <MainSection />;
+}
 
 export default MainHome;
